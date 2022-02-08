@@ -21,6 +21,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body>
@@ -39,11 +40,14 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
     <header>
       <div class="navigation-container">
         <div class="top-head">
           <div>
-            <img src="images/Education.jpg" alt="" class="web-img" />
+            <buttom id="icon">
+              <img src="images/Education.jpg" alt="" class="web-img" />
+            </buttom>
           </div>
 
           <div class="ham-btn">
@@ -63,7 +67,7 @@
 
         <div class="nav-bar" id="nav-bar">
           <div class="input-group">
-            <div class="form-outline m-2">
+            <div class="form-outline m-2" id="inputSearch">
               <input
                 id="search-input"
                 type="search"
@@ -73,7 +77,7 @@
               <label class="form-label" for="form1">Search</label>
             </div>
             <div class="form-outline m-2">
-              <button type="button" class="btn btn-outline-primary">
+              <button type="button" class="btn btn-outline-primary" id="search">
                 Search
               </button>
             </div>
@@ -141,7 +145,7 @@
             <h2>EduWeb</h2>
           </div>
         </nav>
-
+        <!-- <button id="button1">Hey</button> -->
         <div class="mainBody">
           <table class="table">
             <tr>
@@ -383,6 +387,35 @@
       });
     </script>
 
+    <script>
+      var click = false;
+      $(document).ready(function () {
+        $("#search").click(function () {
+          if (click) {
+            $("#icon").hide();
+
+            click = false;
+          } else {
+            $("#icon").show();
+
+            click = true;
+          }
+        });
+        $("#button1").click(function () {
+          $("html, body").animate(
+            {
+              scrollTop: innerHeight,
+            },
+            "slow"
+          );
+          return false;
+        });
+      });
+
+      $(window).load(function () {
+        $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+      });
+    </script>
     <footer class="footer">
       <!-- <p>Sanchit Kalsi</p> -->
       <a href="https://twitter.com/PunePict" class="fa fa-twitter"></a>
