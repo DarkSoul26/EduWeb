@@ -529,6 +529,7 @@ ul.ul1 {
   /* background-color: rgb(114, 114, 114); */
   color: white;
   height: 70px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -592,7 +593,7 @@ ul.ul1 {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  margin: 0;
+  padding: 30px;
 }
 
 .container {
