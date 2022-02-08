@@ -16,7 +16,8 @@ function checkInputs() {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
   const password2Value = password2.value.trim();
-
+  var JSONObj = { Name: usernameValue, Email: emailValue };
+  console.log(JSONObj);
   if (usernameValue === "") {
     setErrorFor(username, "Username cannot be blank");
   } else if (usernameValue[0] >= "0" && usernameValue[0] <= "9") {
@@ -63,7 +64,10 @@ function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = "form-control success";
   totalValid++;
-  if (totalValid === 4) location.href = "./index.html";
+  if (totalValid === 4) {
+    // location.href = "./index.html";
+    // console.log(JSONObj);
+  }
 }
 
 function isEmail(email) {
@@ -73,9 +77,9 @@ function isEmail(email) {
 }
 
 // Search Bar
-const searchButton = document.getElementById("search-button");
-const searchInput = document.getElementById("search-input");
-searchButton.addEventListener("click", () => {
-  const inputValue = searchInput.value;
-  alert(inputValue);
-});
+// const searchButton = document.getElementById("search-button");
+// const searchInput = document.getElementById("search-input");
+// searchButton.addEventListener("click", () => {
+//   const inputValue = searchInput.value;
+//   alert(inputValue);
+// });

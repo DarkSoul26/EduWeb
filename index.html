@@ -21,6 +21,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body>
     <script
@@ -92,56 +93,36 @@
       <!-- Sidebar Holder -->
       <nav id="sidebar">
         <div class="sidebar-header">
-          <h3>Bootstrap Sidebar</h3>
+          <h3>EduWeb</h3>
         </div>
 
         <ul class="list-unstyled components">
-          <p>Dummy Heading</p>
+          <p>Home</p>
           <li class="active">
-            <a
-              href="#homeSubmenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Home</a
-            >
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-              <li>
-                <a href="#">Home 1</a>
-              </li>
-              <li>
-                <a href="#">Home 2</a>
-              </li>
-              <li>
-                <a href="#">Home 3</a>
-              </li>
-            </ul>
+            <a href="#">About Us</a>
           </li>
-          <li>
-            <a href="#">About</a>
-            <a
-              href="#pageSubmenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Pages</a
-            >
-            <ul class="collapse list-unstyled" id="pageSubmenu">
-              <li>
-                <a href="#">Page 1</a>
-              </li>
-              <li>
-                <a href="#">Page 2</a>
-              </li>
-              <li>
-                <a href="#">Page 3</a>
-              </li>
-            </ul>
+          <li class="active">
+            <a href="#">Admissions </a>
           </li>
-          <li>
-            <a href="#">Portfolio</a>
+          <li class="active">
+            <a href="#">Life @EduWeb</a>
           </li>
-          <li>
+          <li class="active">
+            <a href="#">Departments</a>
+          </li>
+          <li class="active">
+            <a href="#">T&P</a>
+          </li>
+          <li class="active">
+            <a href="#">Reseach</a>
+          </li>
+          <li class="active">
+            <a href="#">Library</a>
+          </li>
+          <li class="active">
+            <a href="#">Alumni</a>
+          </li>
+          <li class="active">
             <a href="#">Contact</a>
           </li>
         </ul>
@@ -156,17 +137,6 @@
               <span></span>
               <span></span>
             </button>
-            <button
-              class="btn btn-dark d-inline-block d-lg-none ml-auto"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i class="fas fa-align-justify"></i>
-            </button>
 
             <h2>EduWeb</h2>
           </div>
@@ -178,8 +148,8 @@
               <td>
                 <ul class="ul1">
                   <li>TOP COLLEGE</li>
-                  <li>BEST ALUMNI</li>
-                  <li>BEST PERFORMERS</li>
+                  <li>ALUMNI</li>
+                  <li>PERFORMERS</li>
                 </ul>
               </td>
               <td>
@@ -235,20 +205,32 @@
               </td>
             </tr>
           </table>
+          <hr class="hr1" />
+          <center>
+            <canvas
+              id="batchWise"
+              style="width: 100%; max-width: 600px"
+            ></canvas>
+            <br />
+            <canvas
+              id="totalPlacement"
+              style="width: 100%; max-width: 600px"
+            ></canvas>
+          </center>
 
           <table class="table centerTable">
             <tr>
               <td>
                 <iframe
-                  width="560"
-                  height="315"
+                  width="500"
+                  height="300"
                   src="https://www.youtube.com/embed/krzXKGKM0hg"
                   title="PUNE INSTITUTE OF COMPUTER TECHNOLOGY"
                   frameborder="1"
                   allowfullscreen
                 ></iframe>
               </td>
-              <td>
+              <td class="cal1">
                 <table
                   class="table-condensed table-bordered table-striped calender"
                 >
@@ -324,7 +306,55 @@
         </div>
       </div>
     </div>
+    <script>
+      var xValues = ["CSE", "EnTC", "IT"];
+      var yValues = [200, 198, 150];
+      var barColors = ["#b91d47", "#00aba9", "#2b5797"];
 
+      new Chart("batchWise", {
+        type: "pie",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              backgroundColor: barColors,
+              data: yValues,
+            },
+          ],
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Student Placement Branch Wise 2020-21",
+          },
+        },
+      });
+    </script>
+    <script>
+      var xValues = ["2017-18", "2018-19", "2019-20", "2020-21", "2021-22"];
+      var yValues = [38, 43, 50, 55, 66];
+      var barColors = ["red", "green", "blue", "orange", "brown"];
+
+      new Chart("totalPlacement", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              backgroundColor: barColors,
+              data: yValues,
+            },
+          ],
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Our Placement",
+          },
+        },
+      });
+    </script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
